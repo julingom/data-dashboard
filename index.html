@@ -1,261 +1,139 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>? Google ? GitHub ??? ????</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #24292e 0%, #586069 100%);
-            min-height: 100vh; padding: 20px; color: #333;
-        }
-        .container {
-            max-width: 1200px; margin: 0 auto;
-            background: white; border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-        .header {
-            background: linear-gradient(135deg, #0366d6 0%, #28a745 100%);
-            color: white; padding: 40px; text-align: center;
-            position: relative; overflow: hidden;
-        }
-        .header::before {
-            content: ''; position: absolute; top: 0; left: 0;
-            right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-        }
-        .header-content { position: relative; z-index: 1; }
-        .header h1 { 
-            font-size: 3em; margin-bottom: 15px; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-            to { text-shadow: 2px 2px 20px rgba(255,255,255,0.3); }
-        }
-        .tech-stack {
-            display: flex; justify-content: center; 
-            flex-wrap: wrap; gap: 15px; margin-top: 20px;
-        }
-        .tech-badge {
-            background: rgba(255,255,255,0.2); 
-            padding: 8px 16px; border-radius: 20px;
-            font-size: 0.9em; font-weight: bold;
-            backdrop-filter: blur(10px);
-        }
-        .stats {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px; padding: 30px; background: #f6f8fa;
-        }
-        .stat-card {
-            background: white; padding: 25px; border-radius: 15px;
-            text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease; position: relative; overflow: hidden;
-        }
-        .stat-card::before {
-            content: ''; position: absolute; top: 0; left: 0;
-            width: 100%; height: 4px;
-            background: linear-gradient(90deg, #0366d6, #28a745, #ffd33d);
-        }
-        .stat-card:hover { 
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-        .stat-number { 
-            font-size: 2.5em; font-weight: bold; 
-            background: linear-gradient(45deg, #0366d6, #28a745);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-        .stat-label { 
-            color: #666; text-transform: uppercase; 
-            letter-spacing: 1px; font-weight: 600;
-        }
-        .data-section {
-            padding: 40px 30px;
-        }
-        .section-title {
-            text-align: center; font-size: 2em; 
-            margin-bottom: 30px; color: #24292e;
-            position: relative;
-        }
-        .section-title::after {
-            content: ''; position: absolute; bottom: -10px;
-            left: 50%; transform: translateX(-50%);
-            width: 60px; height: 4px;
-            background: linear-gradient(90deg, #0366d6, #28a745);
-            border-radius: 2px;
-        }
-        .data-table {
-            border-radius: 15px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            background: white;
-        }
-        table { width: 100%; border-collapse: collapse; }
-        th { 
-            background: linear-gradient(135deg, #24292e 0%, #586069 100%);
-            color: white; padding: 20px; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1px;
-            position: relative;
-        }
-        th::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 100%; height: 2px;
-            background: linear-gradient(90deg, #0366d6, #28a745, #ffd33d);
-        }
-        td { 
-            padding: 15px 20px; border-bottom: 1px solid #e1e4e8;
-            transition: all 0.3s ease;
-        }
-        tr:nth-child(even) { background: #f6f8fa; }
-        tr:hover { 
-            background: linear-gradient(135deg, #f1f8ff 0%, #f0fff4 100%);
-            transform: scale(1.01);
-        }
-        .footer {
-            background: #24292e; color: white;
-            padding: 40px; text-align: center;
-        }
-        .github-logo {
-            font-size: 2em; margin-bottom: 15px;
-        }
-        .update-info {
-            background: rgba(255,255,255,0.1);
-            padding: 20px; border-radius: 10px;
-            margin: 20px 0; backdrop-filter: blur(10px);
-        }
-        .automation-badge {
-            display: inline-block;
-            background: linear-gradient(45deg, #28a745, #34d058);
-            color: white; padding: 12px 25px;
-            border-radius: 25px; font-weight: bold;
-            margin: 10px 5px; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3); }
-            50% { box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6); }
-            100% { box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3); }
-        }
-        @media (max-width: 768px) {
-            .container { margin: 10px; }
-            .header h1 { font-size: 2em; }
-            .stats { grid-template-columns: 1fr; padding: 20px; }
-            .tech-stack { justify-content: center; }
-            td, th { padding: 10px; font-size: 14px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한놀 | 북구</title>
+  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Gmarket Sans',sans-serif;background:#f9f9f9;}
+    .navbar{position:relative;display:flex;align-items:center;justify-content:center;padding:30px;background:#fff;border-bottom:1px solid #e0e0e0;}
+    .logo{position:absolute;left:30px;}
+    .logo a{font-size:28px;font-weight:bold;color:#912c2c;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:40px;}
+    .nav-links a{font-size:16px;color:#912c2c;text-decoration:none;padding:5px 0;transition:border-bottom .3s;}
+    .nav-links a:hover{border-bottom:2px solid #912c2c;}
+    .category-filter{display:flex;gap:16px;padding:20px 30px;overflow-x:auto;}
+    .category-filter button{flex:none;background:#fff;border:1px solid #912c2c;border-radius:20px;padding:8px 16px;color:#912c2c;font-size:14px;cursor:pointer;}
+    .category-filter .active{background:#912c2c;color:#fff;}
+    .carousel-container{display:flex;gap:20px;padding:0 30px; flex-wrap: wrap;}
+  
+    .card{flex:none;width:300px;max-width:80%;background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;}
+    .card img{width:100%;height:180px;object-fit:cover;}
+    .card-info{padding:16px;text-align:center;flex-grow:1;}
+    .card-info h3{font-size:18px;color:#333;margin-bottom:6px;}
+    .card-info p{font-size:15px;color:#666;margin-bottom:12px;}
+    .rating-comments{display:flex;justify-content:space-between;padding:0 16px 16px;}
+    .stars{font-size:16px;color:#FFC107;}
+    .comments{font-size:13px;color:#888;}
+    .more-card{border:2px dashed #912c2c;display:flex;align-items:center;justify-content:center;}
+    .more-card span{font-size:18px;color:#912c2c;}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <h1>? Google ? GitHub ???</h1>
-                <p style="font-size: 1.3em; margin: 10px 0;">?? ??? ??? ????</p>
-                <div class="automation-badge">? 100% ??? ??</div>
-                
-                <div class="tech-stack">
-                    <span class="tech-badge">? Google Sheets</span>
-                    <span class="tech-badge">? Apps Script</span>
-                    <span class="tech-badge">? GitHub API</span>
-                    <span class="tech-badge">? GitHub Pages</span>
-                </div>
-            </div>
+  <nav class="navbar">
+    <div class="logo"><a href="0520.html">한놀 | 북구</a></div>
+    <ul class="nav-links">
+      <li><a href="#">식당</a></li>
+      <li><a href="#">카페</a></li>
+      <li><a href="#">문화예술</a></li>
+      <li><a href="#">스포츠</a></li>
+      <li><a href="#">기타</a></li>
+    </ul>
+  </nav>
+  <!-- 카테고리 -->
+  <div class="category-filter">
+    <button class="active">식당</button>
+  </div>
+  <!-- 이미지 캐러셀 -->
+  <div class="carousel-container">
+    <!-- 카드 예시: 원하는 만큼 복제, href에 상세 페이지 지정 -->
+    <a href="detail1.html" class="card">
+      <img src="이미지1.jpeg" alt="가게1 이미지">
+      <div class="card-info">
+        <h3>규카츠정</h3>
+        <p>경북 포항시 북구 삼호로 238 1층</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
         </div>
-        
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">5</div>
-                <div class="stat-label">? ? ???</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">4</div>
-                <div class="stat-label">? ?? ?</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">16</div>
-                <div class="stat-label">? ?? ??</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">? ????</div>
-            </div>
+      </div>
+    </a>
+    <a href="detail2.html" class="card">
+      <img src="이미지2.jpeg" alt="가게2 이미지">
+      <div class="card-info">
+        <h3>가정초밥</h3>
+        <p>경북 포항시 북구 삼호로 254 1층</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
         </div>
+      </div>
+    </a>
+    <a href="detail3.html" class="card">
+      <img src="이미지3.jpeg" alt="가게3 이미지">
+      <div class="card-info">
+        <h3>장사이야기 포</h3>
+        <p>경북 포항시 북구 장량로173번길 6-4 1층</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
+        </div>
+      </div>
+    </a>
+    <a href="detail1.html" class="card">
+      <img src="이미지4.jpeg" alt="가게4 이미지">
+      <div class="card-info">
+        <h3>컴포터블 피자</h3>
+        <p>경북 포항시 북구 장량주택로14번길 2 1층 상가 101호</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
+        </div>
+      </div>
+    </a>
+    <a href="detail1.html" class="card">
+      <img src="이미지5.jpeg" alt="가게5 이미지">
+      <div class="card-info">
+        <h3>윷쿠리</h3>
+        <p>경북 포항시 북구 삼호로265번길 8-5</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
+        </div>
+      </div>
+    </a>
 
-        <div class="data-section">
-            <h2 class="section-title">? ??? ???</h2>
-            <div class="data-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>?? ??</th><th>?? ??</th><th>??</th><th>??</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                            <tr>
-                                <td>???</td><td>?</td><td></td><td>100000</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>???</td><td>?</td><td></td><td>100000</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>???? ??</td><td>???</td><td></td><td>20000</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>???? ??</td><td>???</td><td></td><td>20000</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>?? ??</td><td>???</td><td></td><td>4000</td>
-                            </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
+        
+<a href="#" class="card">
+        <img src="이미지7.jpg" alt="가게7 이미지">
+        <div class="card-info">
+          <h3>봉자막창</h3>
+          <p>경북 포항시 북구 천마로 38 1층</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 7</div>
+          </div>
         </div>
+      </a>
 
-        <div class="footer">
-            <div class="github-logo">?</div>
-            <h3>GitHub Pages? ???</h3>
-            <div class="update-info">
-                <strong>? ??? ????</strong><br>
-                2025? 6? 5? ?? 04:16:15
-            </div>
-            <p>? Google Apps Script? ???? ???? ??????</p>
-            <div style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
-                Google Sheets ? Apps Script ? GitHub ? ??? ????
-            </div>
+      <a href="#" class="card">
+        <img src="이미지8.jpg" alt="가게8 이미지">
+        <div class="card-info">
+          <h3>곤지곤지</h3>
+          <p>경북 포항시 북구 장량로 17</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 8</div>
+          </div>
         </div>
-    </div>
-    
-    <script>
-        // ?? ???? (5???)
-        setTimeout(() => location.reload(), 300000);
-        
-        // ??? ? ?? ??
-        document.querySelectorAll('tbody tr').forEach(row => {
-            row.addEventListener('click', function() {
-                this.style.background = 'linear-gradient(135deg, #fff3cd 0%, #d4edda 100%)';
-                setTimeout(() => this.style.background = '', 2000);
-            });
-        });
-        
-        // ?? ?? ?????
-        document.querySelectorAll('.stat-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.querySelector('.stat-number').style.transform = 'scale(1.1)';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.querySelector('.stat-number').style.transform = 'scale(1)';
-            });
-        });
-    </script>
+      </a>
+
+   
+
+   
+   
+  </div>
 </body>
 </html>
