@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한놀 | 북구</title>
+  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Gmarket Sans',sans-serif;background:#f9f9f9;}
+    .navbar{position:relative;display:flex;align-items:center;justify-content:center;padding:30px;background:#fff;border-bottom:1px solid #e0e0e0;}
+    .logo{position:absolute;left:30px;}
+    .logo a{font-size:28px;font-weight:bold;color:#912c2c;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:40px;}
+    .nav-links a{font-size:16px;color:#912c2c;text-decoration:none;padding:5px 0;transition:border-bottom .3s;}
+    .nav-links a:hover{border-bottom:2px solid #912c2c;}
+    .category-filter{display:flex;gap:16px;padding:20px 30px;overflow-x:auto;}
+    .category-filter button{flex:none;background:#fff;border:1px solid #912c2c;border-radius:20px;padding:8px 16px;color:#912c2c;font-size:14px;cursor:pointer;}
+    .category-filter .active{background:#912c2c;color:#fff;}
+    .carousel-container{display:flex;gap:20px;padding:0 30px; flex-wrap: wrap;}
+  
+    .card{flex:none;width:300px;max-width:80%;background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;}
+    .card img{width:100%;height:180px;object-fit:cover;}
+    .card-info{padding:16px;text-align:center;flex-grow:1;}
+    .card-info h3{font-size:18px;color:#333;margin-bottom:6px;}
+    .card-info p{font-size:15px;color:#666;margin-bottom:12px;}
+    .rating-comments{display:flex;justify-content:space-between;padding:0 16px 16px;}
+    .stars{font-size:16px;color:#FFC107;}
+    .comments{font-size:13px;color:#888;}
+    .more-card{border:2px dashed #912c2c;display:flex;align-items:center;justify-content:center;}
+    .more-card span{font-size:18px;color:#912c2c;}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><a href="0520.html">한놀 | 북구</a></div>
+    <ul class="nav-links">
+      <li><a href="#">식당</a></li>
+      <li><a href="#">카페</a></li>
+      <li><a href="#">문화예술</a></li>
+      <li><a href="#">스포츠</a></li>
+      <li><a href="#">기타</a></li>
+    </ul>
+  </nav>
+  <!-- 카테고리 -->
+  <div class="category-filter">
+    <button class="active">식당</button>
+  </div>
+  <!-- 이미지 캐러셀 -->
+  <div class="carousel-container">
+    <!-- 카드 예시: 원하는 만큼 복제, href에 상세 페이지 지정 -->
+    <a href="detail1.html" class="card">
+      <img src="이미지1.jpeg" alt="가게1 이미지">
+      <div class="card-info">
+        <h3>규카츠정</h3>
+        <p>경북 포항시 북구 삼호로 238 1층</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
+        </div>
+      </div>
+    </a>
+    <a href="detail2.html" class="card">
+      <img src="이미지2.jpeg" alt="가게2 이미지">
+      <div class="card-info">
+        <h3>가정초밥</h3>
+        <p>경북 포항시 북구 삼호로 254 1층</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
+        </div>
+      </div>
+    </a>
+    <a href="detail3.html" class="card">
+      <img src="이미지3.jpeg" alt="가게3 이미지">
+      <div class="card-info">
+        <h3>장사이야기 포</h3>
+        <p>경북 포항시 북구 장량로173번길 6-4 1층</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
+        </div>
+      </div>
+    </a>
+    <a href="detail1.html" class="card">
+      <img src="이미지4.jpeg" alt="가게4 이미지">
+      <div class="card-info">
+        <h3>컴포터블 피자</h3>
+        <p>경북 포항시 북구 장량주택로14번길 2 1층 상가 101호</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
+        </div>
+      </div>
+    </a>
+    <a href="detail1.html" class="card">
+      <img src="이미지5.jpeg" alt="가게5 이미지">
+      <div class="card-info">
+        <h3>윷쿠리</h3>
+        <p>경북 포항시 북구 삼호로265번길 8-5</p>
+        <div class="rating-comments">
+          <div class="stars">★★★★☆</div>
+          <div class="comments">댓글 12</div>
+        </div>
+      </div>
+    </a>
+
+        
+<a href="#" class="card">
+        <img src="이미지7.jpg" alt="가게7 이미지">
+        <div class="card-info">
+          <h3>봉자막창</h3>
+          <p>경북 포항시 북구 천마로 38 1층</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 7</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="card">
+        <img src="이미지8.jpg" alt="가게8 이미지">
+        <div class="card-info">
+          <h3>곤지곤지</h3>
+          <p>경북 포항시 북구 장량로 17</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 8</div>
+          </div>
+        </div>
+      </a>
+
+   
+
+   
+   
+  </div>
+</body>
+</html>
