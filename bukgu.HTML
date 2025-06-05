@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>한놀 | 북구</title>
+  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Gmarket Sans', sans-serif; background-color: #f9f9f9; }
+
+   
+    .navbar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .logo {
+      position: absolute;
+      left: 30px;
+    }
+    .logo a {
+      font-size: 28px;
+      font-weight: bold;
+      color: #912c2c;
+      text-decoration: none;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .nav-links li a {
+      font-size: 16px;
+      color: #912c2c;
+      text-decoration: none;
+      padding: 5px 0;
+      transition: border-bottom 0.3s;
+    }
+    .nav-links li a:hover {
+      border-bottom: 2px solid #912c2c;
+    }
+
+    .category-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 20px 30px;
+    }
+    .category-filter a {
+      text-decoration: none;
+    }
+    .category-filter button {
+      background: #fff;
+      border: 1px solid #912c2c;
+      border-radius: 20px;
+      padding: 8px 16px;
+      color: #912c2c;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .category-filter button.active {
+      background: #912c2c;
+      color: #fff;
+    }
+
+    .section-title {
+      padding: 40px 30px 10px;
+    }
+    .section-title button {
+      background: #912c2c;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      cursor: default;
+    }
+
+    .carousel-container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      padding: 0 30px 30px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .carousel-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .carousel-container::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    .card {
+      flex: 0 0 auto;
+      width: 300px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-info {
+      padding: 16px;
+    }
+    .card-info h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 6px;
+    }
+    .card-info p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+    .rating-comments {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stars {
+      font-size: 16px;
+      color: #FFC107;
+    }
+    .comments {
+      font-size: 13px;
+      color: #888;
+    }
+
+     .more-card {
+      flex: 0 0 auto; width: 300px; background: #fff;
+      border: 2px dashed #912c2c; border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; color: #912c2c; font-size: 18px; cursor: pointer;
+    }
+    .more-card:hover {
+      background: rgba(145,44,44,0.1);
+    }
+  </style>
+
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo"><a href="0520.html">한놀 | 북구</a></div>
+    <ul class="nav-links">
+      <li><a href="#section-식당">식당</a></li>
+      <li><a href="#section-카페">카페</a></li>
+      <li><a href="#section-문화예술">문화예술</a></li>
+      <li><a href="#section-스포츠">스포츠</a></li>
+      <li><a href="#section-기타">기타</a></li>
+    </ul>
+  </nav>
+
+
+  <section id="section-식당">
+    <div class="section-title"><button>식당</button></div>
+    <div class="carousel-container">
+      <a href="#" class="card">
+        <img src="이미지1.jpeg" alt="가게1 이미지">
+        <div class="card-info">
+          <h3>규카츠정</h3>
+          <p>경북 포항시 북구 삼호로 238 1층</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 1</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="card">
+        <img src="이미지2.jpeg" alt="가게2 이미지">
+        <div class="card-info">
+          <h3>가정초밥</h3>
+          <p>경북 포항시 북구 삼호로 254 1층</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 2</div>
+          </div>
+        </div>
+      </a>
+    
+<a href="#" class="card">
+        <img src="이미지3.jpg" alt="가게3 이미지">
+        <div class="card-info">
+          <h3>장사이야기포</h3>
+          <p>경북 포항시 북구 장량로 173번길 6-4 1층</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 3</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="card">
+        <img src="이미지4.jpg" alt="가게4 이미지">
+        <div class="card-info">
+          <h3>윳쿠리</h3>
+          <p>경북 포항시 북구 삼호로 265번길 8-5</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 4</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="card">
+        <img src="이미지5.jpg" alt="가게5 이미지">
+        <div class="card-info">
+          <h3>컴포터블 피자</h3>
+          <p>경북 포항시 북구 장량주택로 14번길 2 1층 상가 101호</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 5</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="card">
+        <img src="이미지6.jpg" alt="가게6 이미지">
+        <div class="card-info">
+          <h3>라멘구루마</h3>
+          <p>경북 포항시 북구 장량주택로 14번길 3 1층</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 6</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="food.html" class="more-card">
+        <span>더보기</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="section-카페">
+    <div class="section-title"><button>카페</button></div>
+    <div class="carousel-container">
+      <a href="#" class="card">
+        <img src="이미지1-1.jpeg" alt="카페1-1 이미지">
+        <div class="card-info">
+          <h3>카페어딘가</h3>
+          <p>경북 포항시 어딘가</p>
+          <div class="rating-comments">
+            <div class="stars">★★★☆☆</div>
+            <div class="comments">댓글 1</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+    <section id="section-문화예술">
+    <div class="section-title"><button>문화예술</button></div>
+    <div class="carousel-container">
+      
+            <a href="#" class="card">
+        <img src="이미지2-1.jpg" alt="문화예술2-1 이미지">
+        <div class="card-info">
+          <h3>CGV 북포항</h3>
+          <p>경북 포항시 북구 서동로 93</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 1</div>
+          </div>
+        </div>
+      </a>
+      
+            <a href="#" class="card">
+        <img src="이미지2-2.jpg" alt="문화예술2-2 이미지">
+        <div class="card-info">
+          <h3>롯데시네마 포항</h3>
+          <p>경북 포항시 북구 중앙상가길 16</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 2</div>
+          </div>
+        </div>
+      </a>
+      
+            <a href="#" class="card">
+        <img src="이미지2-3.jpg" alt="문화예술2-3 이미지">
+        <div class="card-info">
+          <h3>인디플러스 포항</h3>
+          <p>경북 포항시 북구 서동로 83</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 3</div>
+          </div>
+        </div>
+      </a>
+      
+      <a href="#" class="card">
+        <img src="이미지2-4.jpg" alt="문화예술2-4 이미지">
+        <div class="card-info">
+          <h3>문화예술팩토리</h3>
+          <p>경북 포항시 북구 삼호로 36</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 4</div>
+          </div>
+        </div>
+      </a>
+
+<a href="#" class="card">
+        <img src="이미지2-5.jpg" alt="문화예술2-5 이미지">
+        <div class="card-info">
+          <h3>포항청춘센터</h3>
+          <p>경북 포항시 북구 중앙상가길 47</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 5</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="식당 더보기.html" class="more-card">
+        <span>더보기</span>
+      </a>
+
+      <a href="#" class="card">
+        <img src="이미지2-6.jpg" alt="문화예술2-6 이미지">
+        <div class="card-info">
+          <h3>포항시립미술관</h3>
+          <p>경북 포항시 북구 환호공원길 10</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 6</div>
+          </div>
+        </div>
+      </a>
+      
+<a href="#" class="card">
+        <img src="이미지2-7.jpg" alt="문화예술2-7 이미지">
+        <div class="card-info">
+          <h3>꿈틀상회</h3>
+          <p>경북 포항시 북구 중앙로 289번길 14-4</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 7</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="card">
+        <img src="이미지2-8.jpg" alt="문화예술2-8 이미지">
+        <div class="card-info">
+          <h3>전통예술원 소리온</h3>
+          <p>경북 포항시 북구 칠성천길 74</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 8</div>
+          </div>
+        </div>
+      </a>
+
+        <a href="#" class="card">
+        <img src="이미지2-1-1.jpg" alt="문화예술2-1-1 이미지">
+        <div class="card-info">
+          <h3>포은중앙도서관</h3>
+          <p>경북 포항시 북구 삼호로 31</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 1</div>
+          </div>
+        </div>
+      </a>
+
+        <a href="#" class="card">
+        <img src="이미지2-1-2.jpg" alt="문화예술2-1-2 이미지">
+        <div class="card-info">
+          <h3>포은흥해도서관</h3>
+          <p>경북 포항시 북구 흥해읍 흥해로 81번길</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 2</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+    <section id="section-스포츠">
+    <div class="section-title"><button>스포츠</button></div>
+    <div class="carousel-container">
+            <a href="#" class="card">
+        <img src="이미지3-1.jpg" alt="스포츠3-1 이미지">
+        <div class="card-info">
+          <h3>레이저 아레나</h3>
+          <p>경북 포항시 북구 해안로 131 발렌타인 상가 7층</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 1</div>
+          </div>
+        </div>
+      </a>
+
+  <a href="#" class="card">
+        <img src="이미지3-2.jpg" alt="스포츠3-2 이미지">
+        <div class="card-info">
+          <h3>ABC 볼링장</h3>
+          <p>경북 포항시 북구 용두산길 25</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 2</div>
+          </div>
+        </div>
+      </a>
+
+        <a href="#" class="card">
+        <img src="이미지3-3.jpg" alt="스포츠3-3 이미지">
+        <div class="card-info">
+          <h3>리얼야구존</h3>
+          <p>경북 포항시 북구 해안로 73 현대로데오타워 10층</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 1</div>
+          </div>
+        </div>
+      </a>
+
+        <a href="#" class="card">
+        <img src="이미지3-4.jpg" alt="스포츠3-4 이미지">
+        <div class="card-info">
+          <h3>태창호</h3>
+          <p>경북 포항시 북구 흥해읍 영일만항로 111-1 태창호</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 4</div>
+          </div>
+        </div>
+      </a>
+
+  <a href="#" class="card">
+        <img src="이미지3-5.jpg" alt="스포츠3-5 이미지">
+        <div class="card-info">
+          <h3>포항서프홀릭</h3>
+          <p>경북 포항시 북구 흥해읍 용한길 244번길 52-12 서프홀락</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 5</div>
+          </div>
+        </div>
+      </a>
+
+        <a href="#" class="card">
+        <img src="이미지3-6.jpg" alt="스포츠3-6 이미지">
+        <div class="card-info">
+          <h3>포항풋살구장</h3>
+          <p>경북 포항시 북구 용흥로 166</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 6</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="식당 더보기.html" class="more-card">
+        <span>더보기</span>
+      </a>
+
+  <a href="#" class="card">
+        <img src="이미지3-7.jpg" alt="스포츠3-7 이미지">
+        <div class="card-info">
+          <h3>양덕스포츠타운축구장</h3>
+          <p>경북 포항시 북구 양덕동 501</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 7</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <section></section>
+
+  <section id="section-기타">
+    <div class="section-title"><button>기타</button></div>
+    <div class="carousel-container">
+      <a href="#" class="card">
+        <img src="이미지4-1.jpg" alt="가게4-1 이미지">
+        <div class="card-info">
+          <h3>이가리 닻 전망대</h3>
+          <p>경북 포항시 북구 청하면 이가리 산67-3</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 1</div>
+          </div>
+        </div>
+      </a>
+
+          <a href="#" class="card">
+        <img src="이미지4-2.jpg" alt="가게4-2 이미지">
+        <div class="card-info">
+          <h3>스페이스워크(환호공원)</h3>
+          <p>경북 포항시 북구 환호공원길 30</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 2</div>
+          </div>
+        </div>
+      </a>
+
+          <a href="#" class="card">
+        <img src="이미지4-3.jpg" alt="가게4-3 이미지">
+        <div class="card-info">
+          <h3>영일대해수욕장</h3>
+          <p>경북 포항시 북구 두호동/항구동</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 3</div>
+          </div>
+        </div>
+      </a>
+
+          <a href="#" class="card">
+        <img src="이미지4-4.jpg" alt="가게4-4 이미지">
+        <div class="card-info">
+          <h3>해오름 전망대</h3>
+          <p>경북 포항시 북구 흥해읍 칠포리 21-1</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 4</div>
+          </div>
+        </div>
+      </a>
+
+          <a href="#" class="card">
+        <img src="이미지4-5.jpg" alt="가게4-5 이미지">
+        <div class="card-info">
+          <h3>월포해수욕장 일출암(생수암)</h3>
+          <p>경북 포항시 북구 송라면 지경리</p>
+          <div class="rating-comments">
+            <div class="stars">★★★★★</div>
+            <div class="comments">댓글 5</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="식당 더보기.html" class="more-card">
+        <span>더보기</span>
+      </a>
+      <section></section>
+
+</body>
+</html>
