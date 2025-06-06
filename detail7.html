@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개꿀 딸기 - 한놀 | 북구</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Gmarket Sans", sans-serif;
+      background: #f9f9f9;
+    }
+
+    .navbar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .logo {
+      position: absolute;
+      left: 30px;
+    }
+
+    .logo a {
+      font-size: 28px;
+      font-weight: bold;
+      color: #912c2c;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      font-size: 16px;
+      color: #912c2c;
+      text-decoration: none;
+      padding: 5px 0;
+      transition: border-bottom 0.3s;
+    }
+
+    .nav-links a:hover {
+      border-bottom: 2px solid #912c2c;
+    }
+
+    .category-filter {
+      display: flex;
+      gap: 16px;
+      padding: 20px 30px;
+      overflow-x: auto;
+    }
+
+    .category-filter button {
+      flex: none;
+      background: #fff;
+      border: 1px solid #912c2c;
+      border-radius: 20px;
+      padding: 8px 16px;
+      color: #912c2c;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .category-filter .active {
+      background: #912c2c;
+      color: #fff;
+    }
+
+   .carousel-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-info {
+      padding: 16px;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .card-info h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .card-info p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .rating-comments {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px 16px;
+    }
+
+    .stars {
+      font-size: 16px;
+      color: #ffc107;
+    }
+
+    .comments {
+      font-size: 13px;
+      color: #888;
+    }
+
+    .more-card {
+      border: 2px dashed #912c2c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .more-card span {
+      font-size: 18px;
+      color: #912c2c;
+    }
+
+    /* 반응형: 화면 크기에 따라 카드 수 자동 조정 */
+    @media (max-width: 1024px) {
+      .card {
+        flex: 0 0 calc((100% - 60px) / 4);
+        max-width: calc((100% - 60px) / 4);
+      }
+    }
+    @media (max-width: 768px) {
+      .card {
+        flex: 0 0 calc((100% - 40px) / 2);
+        max-width: calc((100% - 40px) / 2);
+      }
+    }
+    @media (max-width: 480px) {
+      .card {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><a href="food.html">한놀 | 북구</a></div>
+    <a href="food.html" class="back-btn">← 목록으로</a>
+  </nav>
+  
+  <div class="hero">
+    <div class="hero-overlay">
+      <h1>개꿀 딸기</h1>
+      <p>어쩌니</p>
+    </div>
+  </div>
+  
+  <div class="content">
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>📍 기본 정보</h3>
+        <div class="info-item">
+          <strong>주소:</strong> 어쩌니
+        </div>
+        <div class="info-item">
+          <strong>전화:</strong> 010-8108-5816
+        </div>
+        <div class="info-item">
+          <strong>영업시간:</strong> 11:00~12:00
+        </div>
+      </div>
+      
+      <div class="info-card">
+        <h3>🍽️ 메뉴 정보</h3>
+        <div class="info-item">
+          <div style="margin-bottom: 8px;">• adfad:11111원</div><div style="margin-bottom: 8px;">• dfsfd:111111원</div><div style="margin-bottom: 8px;">• dfsewef:111111원</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="description">
+      <h3>📝 상세 설명</h3>
+      <p style="line-height: 1.8; color: #555;">
+        ddd
+      </p>
+    </div>
+  </div>
+
+  <!-- 📱 모바일 최적화 스크립트 -->
+  <script>
+    // 뒤로가기 버튼 클릭 이벤트
+    document.querySelector('.back-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'food.html';
+    });
+    
+    // 로고 클릭 이벤트
+    document.querySelector('.logo a').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'food.html';
+    });
+  </script>
+</body>
+</html>
