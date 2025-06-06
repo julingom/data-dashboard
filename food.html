@@ -9,29 +9,194 @@
       rel="stylesheet"
     />
       <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Gmarket Sans',sans-serif;background:#f9f9f9;}
-    .navbar{position:relative;display:flex;align-items:center;justify-content:center;padding:30px;background:#fff;border-bottom:1px solid #e0e0e0;}
-    .logo{position:absolute;left:30px;}
-    .logo a{font-size:28px;font-weight:bold;color:#912c2c;text-decoration:none;}
-    .nav-links{list-style:none;display:flex;gap:40px;}
-    .nav-links a{font-size:16px;color:#912c2c;text-decoration:none;padding:5px 0;transition:border-bottom .3s;}
-    .nav-links a:hover{border-bottom:2px solid #912c2c;}
-    .category-filter{display:flex;gap:16px;padding:20px 30px;overflow-x:auto;}
-    .category-filter button{flex:none;background:#fff;border:1px solid #912c2c;border-radius:20px;padding:8px 16px;color:#912c2c;font-size:14px;cursor:pointer;}
-    .category-filter .active{background:#912c2c;color:#fff;}
-    .carousel-container{display:flex;gap:20px;padding:0 30px; flex-wrap: wrap;}
-  
-    .card{flex:none;width:300px;max-width:80%;background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;}
-    .card img{width:100%;height:180px;object-fit:cover;}
-    .card-info{padding:16px;text-align:center;flex-grow:1;}
-    .card-info h3{font-size:18px;color:#333;margin-bottom:6px;}
-    .card-info p{font-size:15px;color:#666;margin-bottom:12px;}
-    .rating-comments{display:flex;justify-content:space-between;padding:0 16px 16px;}
-    .stars{font-size:16px;color:#FFC107;}
-    .comments{font-size:13px;color:#888;}
-    .more-card{border:2px dashed #912c2c;display:flex;align-items:center;justify-content:center;}
-    .more-card span{font-size:18px;color:#912c2c;}
+   
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Gmarket Sans', sans-serif;
+        background: #f9f9f9;
+      }
+      
+      .navbar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        background: #fff;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      
+      .logo {
+        position: absolute;
+        left: 30px;
+      }
+      
+      .logo a {
+        font-size: 28px;
+        font-weight: bold;
+        color: #912c2c;
+        text-decoration: none;
+      }
+      
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+      }
+      
+      .nav-links a {
+        font-size: 16px;
+        color: #912c2c;
+        text-decoration: none;
+        padding: 5px 0;
+        transition: border-bottom 0.3s;
+      }
+      
+      .nav-links a:hover {
+        border-bottom: 2px solid #912c2c;
+      }
+      
+      .category-filter {
+        display: flex;
+        gap: 16px;
+        padding: 20px 30px;
+        overflow-x: auto;
+      }
+      
+      .category-filter button {
+        flex: none;
+        background: #fff;
+        border: 1px solid #912c2c;
+        border-radius: 20px;
+        padding: 8px 16px;
+        color: #912c2c;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      
+      .category-filter .active {
+        background: #912c2c;
+        color: #fff;
+      }
+
+      /* 🎯 수정된 Grid 컨테이너 */
+      .carousel-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 25px;
+        padding: 40px 30px;
+        max-width: 1600px;
+        margin: 0 auto;
+        background: #f9f9f9;
+      }
+
+      /* 🎯 수정된 카드 스타일 */
+      .card {
+        /* width와 flex 제거! */
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        height: 100%; /* Grid 아이템이 같은 높이 유지 */
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(145, 44, 44, 0.15);
+      }
+      
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .card-info {
+        padding: 20px;
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .card-info h3 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      
+      .card-info p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        flex-grow: 1;
+      }
+      
+      .rating-comments {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .stars {
+        font-size: 16px;
+        color: #FFC107;
+      }
+      
+      .comments {
+        font-size: 13px;
+        color: #888;
+      }
+
+      /* 🎯 반응형 디자인 */
+      @media (max-width: 1400px) {
+        .carousel-container {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .carousel-container {
+          grid-template-columns: repeat(3, 1fr);
+          padding: 30px 20px;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .carousel-container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+        
+        .navbar {
+          padding: 20px;
+        }
+        
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .carousel-container {
+          grid-template-columns: 1fr;
+          padding: 20px 15px;
+        }
+      }
+    
   </style>
   </head>
   <body>
