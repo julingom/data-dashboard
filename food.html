@@ -83,26 +83,24 @@
       color: #fff;
     }
 
-    .carousel-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px 30px;
-      justify-content: flex-start;
-    }
+  .carousel-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px 30px;
+}
 
-    .card {
-      flex: 0 0 calc((100% - 80px) / 5);
-      max-width: calc((100% - 80px) / 5);
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-    }
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
 
     .card img {
       width: 100%;
