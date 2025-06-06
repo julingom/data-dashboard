@@ -8,133 +8,174 @@
       href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css"
       rel="stylesheet"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Gmarket Sans", sans-serif;
-        background: #f9f9f9;
-      }
-      .navbar {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 30px;
-        background: #fff;
-        border-bottom: 1px solid #e0e0e0;
-      }
-      .logo {
-        position: absolute;
-        left: 30px;
-      }
-      .logo a {
-        font-size: 28px;
-        font-weight: bold;
-        color: #912c2c;
-        text-decoration: none;
-      }
-      .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 40px;
-      }
-      .nav-links a {
-        font-size: 16px;
-        color: #912c2c;
-        text-decoration: none;
-        padding: 5px 0;
-        transition: border-bottom 0.3s;
-      }
-      .nav-links a:hover {
-        border-bottom: 2px solid #912c2c;
-      }
-      .category-filter {
-        display: flex;
-        gap: 16px;
-        padding: 20px 30px;
-        overflow-x: auto;
-      }
-      .category-filter button {
-        flex: none;
-        background: #fff;
-        border: 1px solid #912c2c;
-        border-radius: 20px;
-        padding: 8px 16px;
-        color: #912c2c;
-        font-size: 14px;
-        cursor: pointer;
-      }
-      .category-filter .active {
-        background: #912c2c;
-        color: #fff;
-      }
-      .carousel-container {
-        display: flex;
-        gap: 20px;
-        padding: 0 30px;
-        flex-wrap: wrap;
-      }
+     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Gmarket Sans", sans-serif;
+      background: #f9f9f9;
+    }
+
+    .navbar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .logo {
+      position: absolute;
+      left: 30px;
+    }
+
+    .logo a {
+      font-size: 28px;
+      font-weight: bold;
+      color: #912c2c;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      font-size: 16px;
+      color: #912c2c;
+      text-decoration: none;
+      padding: 5px 0;
+      transition: border-bottom 0.3s;
+    }
+
+    .nav-links a:hover {
+      border-bottom: 2px solid #912c2c;
+    }
+
+    .category-filter {
+      display: flex;
+      gap: 16px;
+      padding: 20px 30px;
+      overflow-x: auto;
+    }
+
+    .category-filter button {
+      flex: none;
+      background: #fff;
+      border: 1px solid #912c2c;
+      border-radius: 20px;
+      padding: 8px 16px;
+      color: #912c2c;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .category-filter .active {
+      background: #912c2c;
+      color: #fff;
+    }
+
+    .carousel-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px 30px;
+      justify-content: flex-start;
+    }
+
+    .card {
+      flex: 0 0 calc((100% - 80px) / 5);
+      max-width: calc((100% - 80px) / 5);
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-info {
+      padding: 16px;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .card-info h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .card-info p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .rating-comments {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px 16px;
+    }
+
+    .stars {
+      font-size: 16px;
+      color: #ffc107;
+    }
+
+    .comments {
+      font-size: 13px;
+      color: #888;
+    }
+
+    .more-card {
+      border: 2px dashed #912c2c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .more-card span {
+      font-size: 18px;
+      color: #912c2c;
+    }
+
+    /* 반응형: 화면 크기에 따라 카드 수 자동 조정 */
+    @media (max-width: 1024px) {
       .card {
-        flex: none;
-        width: 300px;
-        max-width: 80%;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        flex-direction: column;
+        flex: 0 0 calc((100% - 60px) / 4);
+        max-width: calc((100% - 60px) / 4);
       }
-      .card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .card {
+        flex: 0 0 calc((100% - 40px) / 2);
+        max-width: calc((100% - 40px) / 2);
       }
-      .card-info {
-        padding: 16px;
-        text-align: center;
-        flex-grow: 1;
+    }
+    @media (max-width: 480px) {
+      .card {
+        flex: 0 0 100%;
+        max-width: 100%;
       }
-      .card-info h3 {
-        font-size: 18px;
-        color: #333;
-        margin-bottom: 6px;
-      }
-      .card-info p {
-        font-size: 15px;
-        color: #666;
-        margin-bottom: 12px;
-      }
-      .rating-comments {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 16px 16px;
-      }
-      .stars {
-        font-size: 16px;
-        color: #ffc107;
-      }
-      .comments {
-        font-size: 13px;
-        color: #888;
-      }
-      .more-card {
-        border: 2px dashed #912c2c;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .more-card span {
-        font-size: 18px;
-        color: #912c2c;
-      }
-    </style>
+    }
+  </style>
   </head>
   <body>
     <nav class="navbar">
