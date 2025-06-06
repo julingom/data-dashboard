@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>가게 정보 업로드</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      padding: 50px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    form:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 20px;
+      display: block;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #007BFF;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 30px;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="https://getform.io" method="POST" enctype="multipart/form-data">
+    <h2>가게 정보 등록</h2>
+
+    <label for="storeName">가게 이름</label>
+    <input type="text" id="storeName" name="storeName" required>
+
+    <label for="storeAddress">가게 주소</label>
+    <input type="text" id="storeAddress" name="storeAddress" required>
+
+    <label for="storeImage">가게 사진</label>
+    <input type="file" id="storeImage" name="storeImage" accept="image/*" required>
+
+    <label for="menu">메뉴</label>
+    <textarea id="menu" name="menu" rows="3" placeholder="예:" required></textarea>
+
+    <label for="price">가격 정보</label>
+    <textarea id="price" name="price" rows="3" placeholder="예:" required></textarea>
+
+    <input type="hidden" name="_gotcha" style="display:none">
+
+    <input type="submit" value="업로드">
+  </form>
+
+</body>
+</html>
