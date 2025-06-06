@@ -8,7 +8,7 @@
       href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css"
       rel="stylesheet"
     />
-     <style>
+      <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Gmarket Sans',sans-serif;background:#f9f9f9;}
     .navbar{position:relative;display:flex;align-items:center;justify-content:center;padding:30px;background:#fff;border-bottom:1px solid #e0e0e0;}
@@ -20,24 +20,9 @@
     .category-filter{display:flex;gap:16px;padding:20px 30px;overflow-x:auto;}
     .category-filter button{flex:none;background:#fff;border:1px solid #912c2c;border-radius:20px;padding:8px 16px;color:#912c2c;font-size:14px;cursor:pointer;}
     .category-filter .active{background:#912c2c;color:#fff;}
-    .carousel-container {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개 */
-      gap: 20px;
-      padding: 20px 30px;
-    }
-
+    .carousel-container{display:flex;gap:20px;padding:0 30px; flex-wrap: wrap;}
   
-    .card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    height: 100%;}
+    .card{flex:none;width:300px;max-width:80%;background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;}
     .card img{width:100%;height:180px;object-fit:cover;}
     .card-info{padding:16px;text-align:center;flex-grow:1;}
     .card-info h3{font-size:18px;color:#333;margin-bottom:6px;}
