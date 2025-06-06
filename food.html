@@ -8,19 +8,17 @@
       href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css"
       rel="stylesheet"
     />
-      <style>
-   
+    <style>
+      /* ────── 공통 스타일 ────── */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-      
       body {
         font-family: 'Gmarket Sans', sans-serif;
         background: #f9f9f9;
       }
-      
       .navbar {
         position: relative;
         display: flex;
@@ -30,25 +28,21 @@
         background: #fff;
         border-bottom: 1px solid #e0e0e0;
       }
-      
       .logo {
         position: absolute;
         left: 30px;
       }
-      
       .logo a {
         font-size: 28px;
         font-weight: bold;
         color: #912c2c;
         text-decoration: none;
       }
-      
       .nav-links {
         list-style: none;
         display: flex;
         gap: 40px;
       }
-      
       .nav-links a {
         font-size: 16px;
         color: #912c2c;
@@ -56,18 +50,15 @@
         padding: 5px 0;
         transition: border-bottom 0.3s;
       }
-      
       .nav-links a:hover {
         border-bottom: 2px solid #912c2c;
       }
-      
       .category-filter {
         display: flex;
         gap: 16px;
         padding: 20px 30px;
         overflow-x: auto;
       }
-      
       .category-filter button {
         flex: none;
         background: #fff;
@@ -78,26 +69,22 @@
         font-size: 14px;
         cursor: pointer;
       }
-      
       .category-filter .active {
         background: #912c2c;
         color: #fff;
       }
 
-      /* 🎯 수정된 Grid 컨테이너 */
+      /* ────── 5열 Grid ────── */
       .carousel-container {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 25px;
+        display: grid;                             /* Grid 선언 */
+        grid-template-columns: repeat(5, 1fr);     /* 한 줄에 5열 생성 */
+        gap: 25px;                                 /* 카드 사이의 간격 */
         padding: 40px 30px;
         max-width: 1600px;
         margin: 0 auto;
         background: #f9f9f9;
       }
-
-      /* 🎯 수정된 카드 스타일 */
       .card {
-        /* width와 flex 제거! */
         background: #fff;
         border-radius: 12px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -107,20 +94,17 @@
         display: flex;
         flex-direction: column;
         transition: all 0.3s ease;
-        height: 100%; /* Grid 아이템이 같은 높이 유지 */
+        height: 100%;
       }
-
       .card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(145, 44, 44, 0.15);
       }
-      
       .card img {
         width: 100%;
         height: 200px;
         object-fit: cover;
       }
-      
       .card-info {
         padding: 20px;
         text-align: center;
@@ -129,14 +113,12 @@
         flex-direction: column;
         justify-content: space-between;
       }
-      
       .card-info h3 {
         font-size: 18px;
         color: #333;
         margin-bottom: 8px;
         font-weight: bold;
       }
-      
       .card-info p {
         font-size: 14px;
         color: #666;
@@ -144,60 +126,51 @@
         line-height: 1.4;
         flex-grow: 1;
       }
-      
       .rating-comments {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      
       .stars {
         font-size: 16px;
         color: #FFC107;
       }
-      
       .comments {
         font-size: 13px;
         color: #888;
       }
 
-      /* 🎯 반응형 디자인 */
+      /* 반응형 (화면 폭 줄어들면 열 숫자 감소) */
       @media (max-width: 1400px) {
         .carousel-container {
           grid-template-columns: repeat(4, 1fr);
         }
       }
-
       @media (max-width: 1100px) {
         .carousel-container {
           grid-template-columns: repeat(3, 1fr);
           padding: 30px 20px;
         }
       }
-
       @media (max-width: 800px) {
         .carousel-container {
           grid-template-columns: repeat(2, 1fr);
           gap: 20px;
         }
-        
         .navbar {
           padding: 20px;
         }
-        
         .nav-links {
           display: none;
         }
       }
-
       @media (max-width: 500px) {
         .carousel-container {
           grid-template-columns: 1fr;
           padding: 20px 15px;
         }
       }
-    
-  </style>
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -221,79 +194,55 @@
         <div class="card-info">
           <h3>규카츠정</h3>
           <p>경북 포항시 북구 삼호로 238 1층</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★☆
-            <div class="comments">댓글 12
         </div>
-            </div>
-          </a>
-            
+      </a>
+
       <a href="detail2.html" class="card">
         <img src="./img2.jpeg" alt="가게2 이미지" />
         <div class="card-info">
           <h3>가정초밥</h3>
           <p>경북 포항시 북구 삼호로 254 1층</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★☆</div>
-            <div class="comments">댓글 12</div>
-          </div>
         </div>
       </a>
+
       <a href="detail3.html" class="card">
         <img src="./img3.jpeg" alt="가게3 이미지" />
         <div class="card-info">
           <h3>장사이야기 포</h3>
           <p>경북 포항시 북구 장량로173번길 6-4 1층</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★☆</div>
-            <div class="comments">댓글 12</div>
-          </div>
         </div>
       </a>
-      <a href="detail1.html" class="card">
+
+      <!-- ↓ 네 번째 카드만 <div> 짝 맞춤을 고쳤습니다 ↓ -->
+      <a href="detail4.html" class="card">
         <img src="./img4.jpeg" alt="가게4 이미지" />
         <div class="card-info">
           <h3>컴포터블 피자</h3>
           <p>경북 포항시 북구 장량주택로14번길 2 1층 상가 101호</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★☆</div>
-            <div class="comments">댓글 12</div>
-          </div>
         </div>
       </a>
-      <a href="detail1.html" class="card">
+
+      <a href="detail5.html" class="card">
         <img src="./img5.jpeg" alt="가게5 이미지" />
         <div class="card-info">
           <h3>윷쿠리</h3>
           <p>경북 포항시 북구 삼호로265번길 8-5</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★☆</div>
-            <div class="comments">댓글 12</div>
-          </div>
         </div>
       </a>
 
-      <a href="#" class="card">
+      <a href="detail6.html" class="card">
         <img src="./img7.jpg" alt="가게7 이미지" />
         <div class="card-info">
           <h3>봉자막창</h3>
           <p>경북 포항시 북구 천마로 38 1층</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 7</div>
-          </div>
         </div>
       </a>
 
-      <a href="#" class="card">
+      <a href="detail7.html" class="card">
         <img src="./img8.jpg" alt="가게8 이미지" />
         <div class="card-info">
           <h3>곤지곤지</h3>
           <p>경북 포항시 북구 장량로 17</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 8</div>
-          </div>
         </div>
       </a>
 
@@ -304,8 +253,6 @@
           <p>ㄱㄱㄱ</p>
         </div>
       </a>
-
-      
-   </div>
-</body>
+    </div>
+  </body>
 </html>
