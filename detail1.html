@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엄마 - 한놀 | 북구</title>
+  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Gmarket Sans', sans-serif;
+      background: #f9f9f9;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 30px;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .logo a {
+      font-size: 28px;
+      font-weight: bold;
+      color: #912c2c;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      background: #912c2c;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #7a2525;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(145, 44, 44, 0.8), rgba(145, 44, 44, 0.8)), url('./img1.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 30px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .info-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-card h3 {
+      color: #912c2c;
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .info-item {
+      margin-bottom: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .info-item strong {
+      color: #333;
+      margin-right: 10px;
+    }
+
+    .description {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .description h3 {
+      color: #912c2c;
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 32px;
+      }
+      
+      .content {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><a href="bukgu.html">한놀 | 북구</a></div>
+    <a href="food.html" class="back-btn">← 목록으로</a>
+  </nav>
+  
+  <div class="hero">
+    <div>
+      <h1>규카츠정</h1>
+      <p>포항 북구 두호동 삼호로 238 1층</p>
+    </div>
+  </div>
+  
+  <div class="content">
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>📍 기본 정보</h3>
+        <div class="info-item">
+          <strong>주소:</strong> 포항 북구 두호동 삼호로 238 1층
+        </div>
+        <div class="info-item">
+          <strong>전화:</strong> 0507-1364-0155
+        </div>
+        <div class="info-item">
+          <strong>영업시간:</strong> 11:00~21:00 + 15:00~17:00 브레이크 타임
+        </div>
+      </div>
+      
+      <div class="info-card">
+        <h3>🍽️ 메뉴 정보</h3>
+        <div class="info-item">
+          <div style="margin-bottom: 8px;">• 규카츠 타마고텐동정식:16,000원</div><div style="margin-bottom: 8px;">• 마제타마고텐동:13,000</div><div style="margin-bottom: 8px;">• 규카츠 정식:14,000</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="description">
+      <h3>📝 상세 설명</h3>
+      <p style="line-height: 1.8; color: #555;">
+        바삭하게 튀겨낸 소고기 등심을 한 입 크기로 썰어, 기호에 따라 와사비 간장, 특제 소스, 소금에 곁들여 먹는 음식
+        뭘 고를지 모르겠다면 대표 매뉴 규카츠 타마고텐동정식으로~!
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.back-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'food.html';
+    });
+    
+    document.querySelector('.logo a').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'food.html';
+    });
+  </script>
+</body>
+</html>
