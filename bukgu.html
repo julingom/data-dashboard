@@ -69,20 +69,34 @@
       color: #fff;
     }
 
-    .section-title {
-      padding: 40px 30px 10px;
-    }
-    .section-title button {
-      background: #912c2c;
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      border: none;
-      border-radius: 20px;
-      padding: 10px 20px;
-      cursor: default;
+    .section-header {
+    display: flex;
+    align-items: center;
+    padding: 40px 30px 10px;
+    gap: 16px; /* 버튼 사이 간격 */
     }
 
+    .section-header .main-title {
+    background: #912c2c;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: default;
+    }
+
+    .section-header .new-register {
+    background: #d7a4a4;
+    color: rgb(49, 48, 48);
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
     .carousel-container {
       display: flex;
       flex-direction: row;
@@ -168,8 +182,10 @@
   </nav>
 
 
-  <section id="section-식당">
-    <div class="section-title"><button>식당</button></div>
+  <div class="section-header">
+  <button class="main-title">식당</button>
+  <a href="jj.html"><button class="new-register">새 식당 등록</button></a>
+</div>
     <div class="carousel-container">
       <a href="#" class="card">
         <img src="img1.jpeg" alt="가게1 이미지">
@@ -249,8 +265,10 @@
     </div>
   </section>
 
-  <section id="section-카페">
-    <div class="section-title"><button>카페</button></div>
+  <div class="section-header">
+  <button class="main-title">카페</button>
+  <a href="jj.html"><button class="new-register">새 카페 등록</button></a>
+</div>
     <div class="carousel-container">
       <a href="#" class="card">
         <img src="img1-1.jpeg" alt="카페1-1 이미지">
@@ -266,8 +284,10 @@
     </div>
   </section>
 
-    <section id="section-문화예술">
-    <div class="section-title"><button>문화예술</button></div>
+    <div class="section-header">
+  <button class="main-title">문화예술</button>
+  <a href="jj.html"><button class="new-register">새 문화예술 등록</button></a>
+</div>
     <div class="carousel-container">
       
             <a href="#" class="card">
@@ -396,8 +416,10 @@
     </div>
   </section>
 
-    <section id="section-스포츠">
-    <div class="section-title"><button>스포츠</button></div>
+   <div class="section-header">
+  <button class="main-title">스포츠</button>
+  <a href="jj.html"><button class="new-register">새 스포츠 등록</button></a>
+</div>
     <div class="carousel-container">
             <a href="#" class="card">
         <img src="img3-1.jpg" alt="스포츠3-1 이미지">
@@ -489,8 +511,10 @@
     </div>
     <section></section>
 
-  <section id="section-기타">
-    <div class="section-title"><button>기타</button></div>
+  <div class="section-header">
+  <button class="main-title">기타</button>
+  <a href="jj.html"><button class="new-register">새 기타 등록</button></a>
+</div>
     <div class="carousel-container">
       <a href="#" class="card">
         <img src="img4-1.jpg" alt="가게4-1 이미지">
