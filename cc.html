@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>카페 등록 - 한놀 | 북구</title>
+  <title>문화예술 등록 - 한놀 | 북구</title>
   <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -296,23 +296,23 @@
 <body>
   <div class="form-container">
     <div class="form-header">
-      <h1>🍽️ 맛집 등록</h1>
-      <p>한놀 | 북구에 새로운 카페를 추가해보세요!</p>
+      <h1>🎨 문화예술 등록</h1>
+      <p>한놀 | 북구에 새로운 문화예술 장소를 추가해보세요!</p>
     </div>
     
     <div class="form-note">
-      <p><strong>📝 등록 안내:</strong> 등록하신 카페 정보는 검토 후 한놀 | 북구 사이트에 자동으로 추가됩니다. 메뉴와 가격을 정확히 입력해주세요.</p>
+      <p><strong>📝 등록 안내:</strong> 등록하신 문화예술 정보는 한놀 | 북구 사이트에 자동으로 추가됩니다. </p>
     </div>
     
     <form action="https://getform.io/f/adrgdrra" method="POST" id="restaurantForm">
       <div class="form-group">
-        <label for="name">가게 이름 <span class="required">*</span></label>
-        <input type="text" id="name" name="가게이름" required placeholder="예: 규카츠정">
+        <label for="name">장소 이름 <span class="required">*</span></label>
+        <input type="text" id="name" name="가게이름" required placeholder="예: 전쟁박물관">
       </div>
       
       <div class="form-group">
         <label for="address">주소 <span class="required">*</span></label>
-        <input type="text" id="address" name="주소" required placeholder="예: 경북 포항시 북구 삼호로 238 1층">
+        <input type="text" id="address" name="주소" required placeholder="예: 서울 용산구 이태원로 29">
       </div>
       
       <div class="form-group">
@@ -337,50 +337,15 @@
           <input type="text" id="hours" name="영업시간" placeholder="11:00 - 22:00">
         </div>
       </div>
-      
-      <!-- 🍽️ 향상된 메뉴 섹션 -->
-      <div class="menu-section">
-        <div class="menu-header">
-          <h3>🍽️ 메뉴 및 가격</h3>
-          <button type="button" class="add-menu-btn" onclick="addMenuItem()">+ 메뉴 추가</button>
-        </div>
-        
-        <div id="menuContainer">
-          <!-- 기본 메뉴 1개 -->
-          <div class="menu-item" data-menu="1">
-            <div class="menu-item-header">
-              <div class="menu-number">1</div>
-              <button type="button" class="remove-menu-btn" onclick="removeMenuItem(1)" title="메뉴 삭제">×</button>
-            </div>
-            <div class="menu-row">
-              <input type="text" placeholder="메뉴명 (예: 김치찌개)" data-menu-name="1" oninput="updateMenuPreview()">
-              <div class="price-input">
-                <input type="number" placeholder="가격" data-menu-price="1" oninput="updateMenuPreview()">
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="menu-preview" id="menuPreview">
-          <h4>📋 메뉴 미리보기</h4>
-          <div id="menuPreviewList">
-            <p style="color: #666; font-style: italic;">메뉴를 입력하면 여기에 미리보기가 표시됩니다.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- 숨겨진 필드들 -->
-      <input type="hidden" name="메뉴" id="menuData">
-      <input type="hidden" name="processed" value="">
-      <input type="hidden" name="제출시간" id="submitTime">
+  
       
       <button type="submit" class="submit-btn" id="submitBtn">
-        🍽️ 맛집 등록하기
+       문화예술 장소 등록하기
       </button>
       
       <div class="success-message" id="successMessage">
         <h3>✅ 등록 완료!</h3>
-        <p>카페 정보가 성공적으로 등록되었습니다.<br>검토 후 한놀 | 북구 사이트에 추가될 예정입니다.</p>
+        <p>문황예술 정보가 성공적으로 등록되었습니다.<br>한놀 | 북구 사이트에 추가될 예정입니다.</p>
       </div>
     </form>
   </div>
@@ -388,47 +353,7 @@
   <script>
     let menuCount = 1;
     
-    // 🍽️ 메뉴 아이템 추가
-    function addMenuItem() {
-      menuCount++;
-      const menuContainer = document.getElementById('menuContainer');
-      
-      const menuItem = document.createElement('div');
-      menuItem.className = 'menu-item';
-      menuItem.setAttribute('data-menu', menuCount);
-      
-      menuItem.innerHTML = `
-        <div class="menu-item-header">
-          <div class="menu-number">${menuCount}</div>
-          <button type="button" class="remove-menu-btn" onclick="removeMenuItem(${menuCount})" title="메뉴 삭제">×</button>
-        </div>
-        <div class="menu-row">
-          <input type="text" placeholder="메뉴명 (예: 된장찌개)" data-menu-name="${menuCount}" oninput="updateMenuPreview()">
-          <div class="price-input">
-            <input type="number" placeholder="가격" data-menu-price="${menuCount}" oninput="updateMenuPreview()">
-          </div>
-        </div>
-      `;
-      
-      menuContainer.appendChild(menuItem);
-      updateMenuPreview();
-      
-      // 새로 추가된 메뉴에 포커스
-      menuItem.querySelector('input[data-menu-name]').focus();
-    }
-    
-    // 🗑️ 메뉴 아이템 삭제
-    function removeMenuItem(menuId) {
-      const menuItem = document.querySelector(`[data-menu="${menuId}"]`);
-      if (menuItem && menuCount > 1) {
-        menuItem.remove();
-        updateMenuNumbers();
-        updateMenuPreview();
-      } else if (menuCount === 1) {
-        alert('최소 1개의 메뉴는 있어야 합니다.');
-      }
-    }
-    
+   
     // 📋 메뉴 번호 업데이트
     function updateMenuNumbers() {
       const menuItems = document.querySelectorAll('.menu-item');
@@ -443,58 +368,6 @@
       menuCount = menuItems.length;
     }
     
-    // 👀 메뉴 미리보기 업데이트
-    function updateMenuPreview() {
-      const menuItems = document.querySelectorAll('.menu-item');
-      const previewList = document.getElementById('menuPreviewList');
-      const menuDataArray = [];
-      
-      let hasContent = false;
-      let previewHTML = '';
-      
-      menuItems.forEach((item, index) => {
-        const name = item.querySelector('[data-menu-name]').value.trim();
-        const price = item.querySelector('[data-menu-price]').value.trim();
-        
-        if (name || price) {
-          hasContent = true;
-          const displayName = name || '메뉴명 미입력';
-          const displayPrice = price ? `${parseInt(price).toLocaleString()}원` : '가격 미입력';
-          
-          previewHTML += `
-            <div class="menu-preview-item">
-              <span>${displayName}</span>
-              <strong>${displayPrice}</strong>
-            </div>
-          `;
-          
-          // 메뉴 데이터 배열에 추가 (둘 다 입력된 경우만)
-          if (name && price) {
-            menuDataArray.push(`${name}:${price}원`);
-          }
-        }
-      });
-      
-      if (!hasContent) {
-        previewHTML = '<p style="color: #666; font-style: italic;">메뉴를 입력하면 여기에 미리보기가 표시됩니다.</p>';
-      }
-      
-      previewList.innerHTML = previewHTML;
-      
-      // 숨겨진 필드에 메뉴 데이터 저장 (쉼표로 구분)
-      document.getElementById('menuData').value = menuDataArray.join(', ');
-    }
-    
-    // 💰 가격 입력 포맷팅
-    document.addEventListener('input', function(e) {
-      if (e.target.hasAttribute('data-menu-price')) {
-        let value = e.target.value.replace(/[^0-9]/g, '');
-        if (value) {
-          // 3자리마다 쉼표 추가 (표시용)
-          e.target.style.color = '#333';
-        }
-      }
-    });
     
     // 📝 폼 제출 처리
     document.getElementById('restaurantForm').addEventListener('submit', function(e) {
