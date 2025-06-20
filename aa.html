@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
+<html>
+<html >
 <head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>카페 등록 - 한놀 | 북구</title>
   <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
@@ -135,10 +134,6 @@
       animation: slideIn 0.3s ease;
     }
     
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
     
     .menu-item-header {
       display: flex;
@@ -385,6 +380,8 @@
     </form>
   </div>
   
+
+  
   <script>
     let menuCount = 1;
     
@@ -525,18 +522,8 @@
       }, 1000);
     });
     
-    // 전화번호 자동 포맷팅
-    document.getElementById('phone').addEventListener('input', function() {
-      let value = this.value.replace(/[^0-9]/g, '');
-      if (value.length >= 6) {
-        if (value.startsWith('02')) {
-          value = value.replace(/(\d{2})(\d{3,4})(\d{4})/, '$1-$2-$3');
-        } else {
-          value = value.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3');
-        }
-      }
-      this.value = value;
-    });
+    
+
     
     // 초기 미리보기 설정
     updateMenuPreview();
