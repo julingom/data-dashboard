@@ -43,6 +43,8 @@
     
     .form-group {
       margin-bottom: 25px;
+      width: 100%;
+      clear: both;
     }
     
     .input-label {
@@ -63,6 +65,7 @@
       font-size: 16px;
       font-family: 'Gmarket Sans', sans-serif;
       transition: border-color 0.3s ease;
+      display: block;
     }
     
     .form-group input:focus,
@@ -82,6 +85,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+      width: 100%;
     }
     
     .menu-section {
@@ -90,6 +94,8 @@
       border-radius: 12px;
       border: 2px solid #e9ecef;
       margin-bottom: 25px;
+      width: 100%;
+      clear: both;
     }
     
     .menu-header {
@@ -227,7 +233,7 @@
     }
     
     .submit-btn {
-      width: 100%;
+      width: 100% !important;
       background: #912c2c;
       color: #fff;
       border: none;
@@ -238,7 +244,10 @@
       font-family: 'Gmarket Sans', sans-serif;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 20px;
+      margin-top: 30px;
+      display: block !important;
+      clear: both;
+      position: relative;
     }
     
     .submit-btn:hover {
@@ -267,6 +276,19 @@
       margin-top: 20px;
       border: 1px solid #c3e6cb;
     }
+
+    /* 제출 버튼 컨테이너 추가 */
+    .submit-container {
+      width: 100%;
+      clear: both;
+      margin-top: 30px;
+    }
+
+    /* 폼 컨테이너가 제대로 감싸도록 */
+    #restaurantForm {
+      width: 100%;
+      overflow: hidden;
+    }
     
     @media (max-width: 768px) {
       .form-container {
@@ -286,6 +308,11 @@
       .menu-item-header {
         flex-direction: column;
         gap: 10px;
+      }
+
+      .submit-btn {
+        font-size: 16px;
+        padding: 16px;
       }
     }
   </style>
@@ -320,25 +347,24 @@
       
       <div class="form-group">
         <span class="input-label">설명</span>
-        <textarea id="description" name="설명" placeholder="장소에에 대한 간단한 설명을 작성해주세요..."></textarea>
+        <textarea id="description" name="설명" placeholder="장소에 대한 간단한 설명을 작성해주세요..."></textarea>
       </div>
       
-        <div class="form-group">
-          <span class="input-label">영업시간</span>
-          <input type="text" id="hours" name="영업시간" placeholder="11:00 - 22:00">
-        </div>
+      <div class="form-group">
+        <span class="input-label">영업시간</span>
+        <input type="text" id="hours" name="영업시간" placeholder="11:00 - 22:00">
       </div>
-      
       
       <!-- 숨겨진 필드들 -->
       <input type="hidden" name="메뉴" id="menuData">
       <input type="hidden" name="processed" value="">
       <input type="hidden" name="제출시간" id="submitTime">
-      <br>
       
-      <button type="submit" class="submit-btn" id="submitBtn">
-        ☕ 카페 등록하기
-      </button>
+      <div class="submit-container">
+        <button type="submit" class="submit-btn" id="submitBtn">
+          ☕ 카페 등록하기
+        </button>
+      </div>
       
       <div class="success-message" id="successMessage">
         <h3>✅ 등록 완료!</h3>
@@ -348,17 +374,11 @@
   </div>
   
   <script>
- 
     // 📝 폼 제출 처리
     document.getElementById('restaurantForm').addEventListener('submit', function(e) {
-      // 메뉴 데이터 최종 업데이트
-      updateMenuPreview();
-      
       // 제출 시간 자동 입력
       const now = new Date();
       document.getElementById('submitTime').value = now.toLocaleString('ko-KR');
-      
-    
       
       // 버튼 상태 변경
       const submitBtn = document.getElementById('submitBtn');
@@ -371,9 +391,6 @@
         this.style.display = 'none';
       }, 1000);
     });
-    
-    // 초기 미리보기 설정
-    updateMenuPreview();
   </script>
 </body>
 </html>
