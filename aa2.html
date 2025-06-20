@@ -45,7 +45,7 @@
       margin-bottom: 25px;
     }
     
-    .form-group label {
+    .input-label {
       display: block;
       color: #912c2c;
       font-weight: bold;
@@ -132,6 +132,10 @@
       animation: slideIn 0.3s ease;
     }
     
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     
     .menu-item-header {
       display: flex;
@@ -289,7 +293,7 @@
 <body>
   <div class="form-container">
     <div class="form-header">
-      <h1>🍽️ 카페 등록</h1>
+      <h1>☕ 카페 등록</h1>
       <p>한놀 | 북구에 새로운 카페를 추가해보세요!</p>
     </div>
     
@@ -299,34 +303,34 @@
     
     <form action="https://getform.io/f/adrgdrra" method="POST" id="restaurantForm">
       <div class="form-group">
-        <label for="name">가게 이름 <span class="required">*</span></label>
+        <span class="input-label">가게 이름 <span class="required">*</span></span>
         <input type="text" id="name" name="가게이름" required placeholder="예: 기복">
       </div>
       
       <div class="form-group">
-        <label for="address">주소 <span class="required">*</span></label>
+        <span class="input-label">주소 <span class="required">*</span></span>
         <input type="text" id="address" name="주소" required placeholder="예: 경상북도 포항시 북구 장량로174번길 17 기복">
       </div>
       
       <div class="form-group">
-      <label for="image">이미지 업로드</label>
-      <input type="file" id="image" name="imgfile" accept="image/*">
-      <small style="color: #888; font-size: 12px;">※ 이미지를 업로드하지 않으면 기본 이미지가 사용됩니다</small>
+        <span class="input-label">이미지 업로드</span>
+        <input type="file" id="image" name="imgfile" accept="image/*">
+        <small style="color: #888; font-size: 12px;">※ 이미지를 업로드하지 않으면 기본 이미지가 사용됩니다</small>
       </div>
       
       <div class="form-group">
-        <label for="description">설명</label>
+        <span class="input-label">설명</span>
         <textarea id="description" name="설명" placeholder="가게에 대한 간단한 설명을 작성해주세요..."></textarea>
       </div>
       
       <div class="form-row">
         <div class="form-group">
-          <label for="phone">전화번호</label>
+          <span class="input-label">전화번호</span>
           <input type="tel" id="phone" name="전화번호" placeholder="054-123-4567">
         </div>
         
         <div class="form-group">
-          <label for="hours">영업시간</label>
+          <span class="input-label">영업시간</span>
           <input type="text" id="hours" name="영업시간" placeholder="11:00 - 22:00">
         </div>
       </div>
@@ -334,7 +338,7 @@
       <!-- 🍽️ 향상된 메뉴 섹션 -->
       <div class="menu-section">
         <div class="menu-header">
-          <h3>🍽️ 메뉴 및 가격</h3>
+          <h3>☕ 메뉴 및 가격</h3>
           <button type="button" class="add-menu-btn" onclick="addMenuItem()">+ 메뉴 추가</button>
         </div>
         
@@ -346,7 +350,7 @@
               <button type="button" class="remove-menu-btn" onclick="removeMenuItem(1)" title="메뉴 삭제">×</button>
             </div>
             <div class="menu-row">
-              <input type="text" placeholder="메뉴명 (예: 김치찌개)" data-menu-name="1" oninput="updateMenuPreview()">
+              <input type="text" placeholder="메뉴명 (예: 아메리카노)" data-menu-name="1" oninput="updateMenuPreview()">
               <div class="price-input">
                 <input type="number" placeholder="가격" data-menu-price="1" oninput="updateMenuPreview()">
               </div>
@@ -368,7 +372,7 @@
       <input type="hidden" name="제출시간" id="submitTime">
       
       <button type="submit" class="submit-btn" id="submitBtn">
-        🍽️ 카페 등록하기
+        ☕ 카페 등록하기
       </button>
       
       <div class="success-message" id="successMessage">
@@ -378,12 +382,10 @@
     </form>
   </div>
   
-
-  
   <script>
     let menuCount = 1;
     
-    // 🍽️ 메뉴 아이템 추가
+    // ☕ 메뉴 아이템 추가
     function addMenuItem() {
       menuCount++;
       const menuContainer = document.getElementById('menuContainer');
@@ -398,7 +400,7 @@
           <button type="button" class="remove-menu-btn" onclick="removeMenuItem(${menuCount})" title="메뉴 삭제">×</button>
         </div>
         <div class="menu-row">
-          <input type="text" placeholder="메뉴명 (예: 된장찌개)" data-menu-name="${menuCount}" oninput="updateMenuPreview()">
+          <input type="text" placeholder="메뉴명 (예: 카페라떼)" data-menu-name="${menuCount}" oninput="updateMenuPreview()">
           <div class="price-input">
             <input type="number" placeholder="가격" data-menu-price="${menuCount}" oninput="updateMenuPreview()">
           </div>
@@ -489,6 +491,19 @@
           e.target.style.color = '#333';
         }
       }
+    });
+    
+    // 전화번호 자동 포맷팅
+    document.getElementById('phone').addEventListener('input', function() {
+      let value = this.value.replace(/[^0-9]/g, '');
+      if (value.length >= 6) {
+        if (value.startsWith('02')) {
+          value = value.replace(/(\d{2})(\d{3,4})(\d{4})/, '$1-$2-$3');
+        } else {
+          value = value.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3');
+        }
+      }
+      this.value = value;
     });
     
     // 📝 폼 제출 처리

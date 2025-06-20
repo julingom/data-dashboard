@@ -1,10 +1,8 @@
 
-<!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>스포츠 등록 - 한놀 | 북구</title>
+  <title>스포츠 등록 - 한놀 | 남구</title>
   <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,7 +46,7 @@
       margin-bottom: 25px;
     }
     
-    .form-group label {
+    .input-label {
       display: block;
       color: #912c2c;
       font-weight: bold;
@@ -297,56 +295,56 @@
 <body>
   <div class="form-container">
     <div class="form-header">
-      <h1>🏋🏻‍♀️ 스포츠 등록</h1>
-      <p>한놀에 새로운 스포츠 장소를 추가해보세요!</p>
+      <h1>⚽️ 스포츠 등록</h1>
+      <p>한놀 | 남구에 새로운 스포츠 장소를 추가해보세요!</p>
     </div>
     
     <div class="form-note">
-      <p><strong>📝 등록 안내:</strong> 등록하신 스포츠 정보는 한놀 사이트에 자동으로 추가됩니다. </p>
+      <p><strong>📝 등록 안내:</strong> 등록하신 스포츠 정보는 한놀 | 남구 사이트에 자동으로 추가됩니다. </p>
     </div>
     
     <form action="https://getform.io/f/adrgdrra" method="POST" id="restaurantForm">
       <div class="form-group">
-        <label for="name">장소 이름 <span class="required">*</span></label>
+        <span class="input-label">장소 이름 <span class="required">*</span></span>
         <input type="text" id="name" name="가게이름" required placeholder="예: 전쟁박물관">
       </div>
       
       <div class="form-group">
-        <label for="address">주소 <span class="required">*</span></label>
+        <span class="input-label">주소 <span class="required">*</span></span>
         <input type="text" id="address" name="주소" required placeholder="예: 서울 용산구 이태원로 29">
       </div>
       
       <div class="form-group">
-      <label for="image">이미지 업로드</label>
-      <input type="file" id="image" name="imgfile" accept="image/*">
-      <small style="color: #888; font-size: 12px;">※ 이미지를 업로드하지 않으면 기본 이미지가 사용됩니다</small>
+        <span class="input-label">이미지 업로드</span>
+        <input type="file" id="image" name="imgfile" accept="image/*">
+        <small style="color: #888; font-size: 12px;">※ 이미지를 업로드하지 않으면 기본 이미지가 사용됩니다</small>
       </div>
       
       <div class="form-group">
-        <label for="description">설명</label>
-        <textarea id="description" name="설명" placeholder="가게에 대한 간단한 설명을 작성해주세요..."></textarea>
+        <span class="input-label">설명</span>
+        <textarea id="description" name="설명" placeholder="장소에 대한 간단한 설명을 작성해주세요..."></textarea>
       </div>
       
       <div class="form-row">
         <div class="form-group">
-          <label for="phone">전화번호</label>
+          <span class="input-label">전화번호</span>
           <input type="tel" id="phone" name="전화번호" placeholder="054-123-4567">
         </div>
         
         <div class="form-group">
-          <label for="hours">영업시간</label>
+          <span class="input-label">영업시간</span>
           <input type="text" id="hours" name="영업시간" placeholder="11:00 - 22:00">
         </div>
       </div>
   
       
       <button type="submit" class="submit-btn" id="submitBtn">
-       스포츠 장소 등록하기
+       문화예술 장소 등록하기
       </button>
       
       <div class="success-message" id="successMessage">
         <h3>✅ 등록 완료!</h3>
-        <p>스포츠 정보가 성공적으로 등록되었습니다.<br>한놀 사이트에 추가될 예정입니다.</p>
+        <p>스포츠 정보가 성공적으로 등록되었습니다.<br>한놀 | 남구 사이트에 추가될 예정입니다.</p>
       </div>
     </form>
   </div>
