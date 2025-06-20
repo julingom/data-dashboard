@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>한놀 | 남구</title>
   <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body { font-family: 'Gmarket Sans', sans-serif; background-color: #f9f9f9; }
 
+   
     .navbar {
       position: relative;
       display: flex;
@@ -68,20 +66,34 @@
       color: #fff;
     }
 
-    .section-title {
-      padding: 40px 30px 10px;
-    }
-    .section-title button {
-      background: #912c2c;
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      border: none;
-      border-radius: 20px;
-      padding: 10px 20px;
-      cursor: default;
+    .section-header {
+    display: flex;
+    align-items: center;
+    padding: 40px 30px 10px;
+    gap: 16px; /* 버튼 사이 간격 */
     }
 
+    .section-header .main-title {
+    background: #912c2c;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: default;
+    }
+
+    .section-header .new-register {
+    background: #d7a4a4;
+    color: rgb(49, 48, 48);
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
     .carousel-container {
       display: flex;
       flex-direction: row;
@@ -139,6 +151,17 @@
       font-size: 13px;
       color: #888;
     }
+
+     .more-card {
+      flex: 0 0 auto; width: 300px; background: #fff;
+      border: 2px dashed #912c2c; border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; color: #912c2c; font-size: 18px; cursor: pointer;
+    }
+    .more-card:hover {
+      background: rgba(145,44,44,0.1);
+    }
   </style>
 </head>
 <body>
@@ -155,17 +178,16 @@
   </nav>
 
   <section id="section-식당">
-    <div class="section-title"><button>식당</button></div>
+    <div class="section-header">
+      <button class="main-title">식당</button>
+      <a href="jj2.html"><button class="new-register">새 식당 등록</button></a>
+    </div>
     <div class="carousel-container">
       <a href="#" class="card">
         <img src="img9.jpg" alt="가게9 이미지">
         <div class="card-info">
           <h3>한씨 막국수</h3>
           <p>경북 포항시 남구 대이로 127번길 4 1층</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 9</div>
-          </div>
         </div>
       </a>
 
@@ -174,22 +196,14 @@
         <div class="card-info">
           <h3>삼동소바</h3>
           <p>경북 포항시 남구 연일읍 중명길 26</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 10</div>
-          </div>
         </div>
       </a>
     
-<a href="#" class="card">
+      <a href="#" class="card">
         <img src="img11.jpg" alt="가게11 이미지">
         <div class="card-info">
           <h3>만재네</h3>
           <p>경북 포항시 남구 효성로 52번길 5 1층</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 11</div>
-          </div>
         </div>
       </a>
 
@@ -198,10 +212,6 @@
         <div class="card-info">
           <h3>백소정</h3>
           <p>경북 포항시 남구 대이로 39 1층 103호</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 12</div>
-          </div>
         </div>
       </a>
 
@@ -210,10 +220,6 @@
         <div class="card-info">
           <h3>대잠멘션</h3>
           <p>경북 포항시 남구 대이로 1번길 20 동부오피스텔 101호</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 13</div>
-          </div>
         </div>
       </a>
 
@@ -222,44 +228,44 @@
         <div class="card-info">
           <h3>상해교자</h3>
           <p>경북 포항시 남구 효자동길 10번길 31-1 1층</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 14</div>
-          </div>
         </div>
       </a>
+       <a href="food2.html" class="more-card">
+        <span>더보기</span>
+        </a>
     </div>
   </section>
 
   <section id="section-카페">
-    <div class="section-title"><button>카페</button></div>
+    <div class="section-header">
+      <button class="main-title">카페</button>
+      <a href="aa2.html"><button class="new-register">새 카페 등록</button></a>
+    </div>
     <div class="carousel-container">
       <a href="#" class="card">
         <img src="img3.jpeg" alt="카페 이미지">
         <div class="card-info">
           <h3>카페어딘가</h3>
           <p>경북 포항시 남구 어딘가</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 5</div>
-          </div>
         </div>
       </a>
+       <a href="cafe2.html" class="more-card">
+        <span>더보기</span>
+        </a>
     </div>
   </section>
 
   <section id="section-문화예술">
-    <div class="section-title"><button>문화예술</button></div>
+    <div class="section-header">
+      <button class="main-title">문화예술</button>
+      <a href="bb2.html"><button class="new-register">새 문화예술 등록</button></a>
+    </div>
     <div class="carousel-container">
       <a href="#" class="card">
         <img src="img2-9.jpg" alt="문화예술2-9 이미지">
         <div class="card-info">
           <h3>메가박스 포항</h3>
           <p>경북 포항시 남구 중흥로 77</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 9</div>
-          </div>
         </div>
       </a>
 
@@ -268,10 +274,6 @@
         <div class="card-info">
           <h3>메가박스 남포항</h3>
           <p>경북 포항시 남구 오천읍 하원로 47번길 9</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 10</div>
-          </div>
         </div>
       </a>
 
@@ -280,190 +282,108 @@
         <div class="card-info">
           <h3>포항문화예술회관</h3>
           <p>경북 포항시 남구 희망대로 850</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 11</div>
-          </div>
         </div>
       </a>
 
-<a href="#" class="card">
+      <a href="#" class="card">
         <img src="img2-12.jpg" alt="문화예술2-12 이미지">
         <div class="card-info">
           <h3>효자아트홀</h3>
           <p>경북 포항시 남구 행복길 120</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 12</div>
-          </div>
         </div>
       </a>
 
-<a href="#" class="card">
+      <a href="#" class="card">
         <img src="img2-13.jpg" alt="문화예술2-13 이미지">
         <div class="card-info">
           <h3>대잠도서관</h3>
           <p>경북 포항시 남구 시청로 1</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 13</div>
-          </div>
         </div>
       </a>
 
-<a href="#" class="card">
+      <a href="#" class="card">
         <img src="img2-14.jpg" alt="문화예술2-14 이미지">
         <div class="card-info">
           <h3>영암도서관</h3>
           <p>경북 포항시 남구 상공로 46번길 11</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 14</div>
-          </div>
         </div>
       </a>
 
-<a href="#" class="card">
-        <img src="2-15.jpg" alt="문화예술2-15 이미지">
-        <div class="card-info">
-          <h3>포은오천도서관</h3>
-          <p>경북 포항시 남구 오천읍 정몽주로 566</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 15</div>
-          </div>
-        </div>
-      </a>
-
-<a href="#" class="card">
-        <img src="img2-16.jpg" alt="문화예술2-16 이미지">
-        <div class="card-info">
-          <h3>동해석곡도서관</h3>
-          <p>경북 포항시 남구 동해면 일원로 41번길 19</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 16</div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="card">
-        <img src="img2-17.jpg" alt="문화예술2-17 이미지">
-        <div class="card-info">
-          <h3>어린이영어도서관</h3>
-          <p>경북 포항시 남구 뱃머리길 39(평생학습원 5층)</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 17</div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="card">
-        <img src="img2-18.jpg" alt="문화예술2-18 이미지">
-        <div class="card-info">
-          <h3>연일도서관</h3>
-          <p>경북 포항시 남구 연일읍 동문로 53번길 8-17</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 18</div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="card">
-        <img src="img2-19.jpg" alt="문화예술2-19 이미지">
-        <div class="card-info">
-          <h3>구룡포도서관</h3>
-          <p>경북 포항시 남구 구룡포읍 병포길 52번길 17</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 12</div>
-          </div>
-        </div>
+      <a href="art2.html" class="more-card">
+        <span>더보기</span>
       </a>
     </div>
   </section>
 
-<section id="section-스포츠">
-    <div class="section-title"><button>스포츠</button></div>
+  <section id="section-스포츠">
+    <div class="section-header">
+      <button class="main-title">스포츠</button>
+      <a href="cc2.html"><button class="new-register">새 스포츠 등록</button></a>
+    </div>
     <div class="carousel-container">
-            <a href="#" class="card">
+      <a href="#" class="card">
         <img src="img3-8.jpg" alt="스포츠3-8 이미지">
         <div class="card-info">
           <h3>포항운하문보트</h3>
           <p>경북 포항시 남구 해도동 538</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 8</div>
-          </div>
         </div>
       </a>
 
- <a href="#" class="card">
+      <a href="#" class="card">
         <img src="img3-9.jpg" alt="스포츠3-9 이미지">
         <div class="card-info">
           <h3>호미곶atv</h3>
           <p>경북 포항시 남구 호미곶면 송림촌길 3</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 9</div>
-          </div>
         </div>
       </a>
 
- <a href="#" class="card">
+      <a href="#" class="card">
         <img src="img3-10.jpg" alt="스포츠3-10 이미지">
         <div class="card-info">
           <h3>포항동해승마장</h3>
           <p>경북 포항시 남구 동해면 약전로 115번길 11</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 10</div>
-          </div>
         </div>
       </a>
-      </section>
+       <a href="sport2.html" class="more-card">
+        <span>더보기</span>
+        </a>
+    </div>
+  </section>
 
-        <section id="section-기타">
-    <div class="section-title"><button>기타</button></div>
-    <sec class="carousel-container">
+  <section id="section-기타">
+    <div class="section-header">
+      <button class="main-title">기타</button>
+      <a href="dd2.html"><button class="new-register">새 기타 등록</button></a>
+    </div>
+    <div class="carousel-container">
       <a href="#" class="card">
         <img src="img4-6.jpg" alt="가게4-6 이미지">
         <div class="card-info">
           <h3>호미곶 해맞이광장</h3>
           <p>경북 포항시 남구 호미곶면 해맞이로 150번길 20</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 6</div>
-          </div>
         </div>
       </a>
 
-    <a href="#" class="card">
+      <a href="#" class="card">
         <img src="img4-7.jpg" alt="가게4-7 이미지">
         <div class="card-info">
           <h3>구룡포 일본인 가옥거리</h3>
           <p>경북 포항시 남구 구룡포길 153-1</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 7</div>
-          </div>
         </div>
       </a>
 
-          <a href="#" class="card">
+      <a href="#" class="card">
         <img src="img4-8.jpg" alt="가게4-8 이미지">
         <div class="card-info">
           <h3>연오랑세오녀 테마공원</h3>
           <p>경북 포항시 남구 동해면 3012</p>
-          <div class="rating-comments">
-            <div class="stars">★★★★★</div>
-            <div class="comments">댓글 8</div>
-            </div>
         </div>
       </a>
-      <section></section>
+      <a href="etc2.html" class="more-card">
+        <span>더보기</span>
+        </a>
+    </div>
+  </section>
 
 </body>
 </html>

@@ -1,7 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>카페 등록 - 한놀 | 북구</title>
+  <title>맛집 등록 - 한놀 | 북구</title>
   <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -84,6 +86,7 @@
       gap: 20px;
     }
     
+    /* 🍽️ 메뉴 시스템 스타일 */
     .menu-section {
       background: #f8f9fa;
       padding: 25px;
@@ -132,6 +135,10 @@
       animation: slideIn 0.3s ease;
     }
     
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     
     .menu-item-header {
       display: flex;
@@ -289,23 +296,23 @@
 <body>
   <div class="form-container">
     <div class="form-header">
-      <h1>🍽️ 카페 등록</h1>
-      <p>한놀 | 북구에 새로운 카페를 추가해보세요!</p>
+      <h1>🍽️ 맛집 등록</h1>
+      <p>한놀 | 북구에 새로운 맛집을 추가해보세요!</p>
     </div>
     
     <div class="form-note">
-      <p><strong>📝 등록 안내:</strong> 등록하신 카페 정보는 검토 후 한놀 | 북구 사이트에 자동으로 추가됩니다. 메뉴와 가격을 정확히 입력해주세요.</p>
+      <p><strong>📝 등록 안내:</strong> 등록하신 맛집 정보는 검토 후 한놀 | 북구 사이트에 자동으로 추가됩니다. 메뉴와 가격을 정확히 입력해주세요.</p>
     </div>
     
     <form action="https://getform.io/f/adrgdrra" method="POST" id="restaurantForm">
       <div class="form-group">
         <label for="name">가게 이름 <span class="required">*</span></label>
-        <input type="text" id="name" name="가게이름" required placeholder="예: 기복">
+        <input type="text" id="name" name="가게이름" required placeholder="예: 규카츠정">
       </div>
       
       <div class="form-group">
         <label for="address">주소 <span class="required">*</span></label>
-        <input type="text" id="address" name="주소" required placeholder="예: 경상북도 포항시 북구 장량로174번길 17 기복">
+        <input type="text" id="address" name="주소" required placeholder="예: 경북 포항시 북구 삼호로 238 1층">
       </div>
       
       <div class="form-group">
@@ -368,17 +375,15 @@
       <input type="hidden" name="제출시간" id="submitTime">
       
       <button type="submit" class="submit-btn" id="submitBtn">
-        🍽️ 카페 등록하기
+        🍽️ 맛집 등록하기
       </button>
       
       <div class="success-message" id="successMessage">
         <h3>✅ 등록 완료!</h3>
-        <p>카페 정보가 성공적으로 등록되었습니다.<br>검토 후 한놀 | 북구 사이트에 추가될 예정입니다.</p>
+        <p>맛집 정보가 성공적으로 등록되었습니다.<br>검토 후 한놀 | 북구 사이트에 추가될 예정입니다.</p>
       </div>
     </form>
   </div>
-  
-
   
   <script>
     let menuCount = 1;
@@ -518,6 +523,19 @@
         document.getElementById('successMessage').style.display = 'block';
         this.style.display = 'none';
       }, 1000);
+    });
+    
+    // 전화번호 자동 포맷팅
+    document.getElementById('phone').addEventListener('input', function() {
+      let value = this.value.replace(/[^0-9]/g, '');
+      if (value.length >= 6) {
+        if (value.startsWith('02')) {
+          value = value.replace(/(\d{2})(\d{3,4})(\d{4})/, '$1-$2-$3');
+        } else {
+          value = value.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3');
+        }
+      }
+      this.value = value;
     });
     
     // 초기 미리보기 설정
