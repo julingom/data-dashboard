@@ -1,0 +1,79 @@
+<html>
+    <head>
+
+    <style>
+.map-container {
+  position: relative;
+  width: 1080px;
+  height: 720px;
+}
+
+.region {
+  position: absolute;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.region:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+/* 각 지역별 위치 설정 */
+.region1 {
+  top: 585px;
+  left: 535px;
+  width: 189px;
+  height: 202px;
+  
+}
+
+.region2 {
+  top: 430px;
+  left: 445px;
+  width: 296px;
+  height: 291px;
+  
+}
+
+.region3 {
+  top: 200px;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.region4 {
+  top: 220px;
+  left: 410px;
+  width: 278px;
+  height: 250px;
+}
+
+.region5 {
+  top: 380px;
+  left: 80px;
+  width: 0%;
+  height: 0%;
+}
+
+.region6 {
+  top: 50px;
+  left: 580px;
+   width: 0%;
+  height: 0%;
+  
+}
+</style>
+</head>
+
+<body >
+<div class="map-container">
+  <img src="1.png" class="region region1" alt="지역1">
+  <img src="2.png" class="region region2" alt="지역2">
+  <img src="3.png" class="region region3" alt="지역3">
+  <img src="4.png" class="region region4" alt="지역4">
+  <img src="5.png" class="region region5" alt="지역5">
+  <img src="6.png" class="region region6" alt="지역6">
+</div>
+</body>
