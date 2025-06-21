@@ -1,46 +1,128 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>한놀</title>
-  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
-    body { font-family: 'Gmarket Sans', sans-serif; }
-    .container { display: flex; height: 100vh; }
-    .map {
-      position: relative;
-      flex: 1;
-      background-size: cover;
-      background-position: center;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-size: 2rem;
-      text-decoration: none;
-    }
-  </style>
+ <meta charset="UTF-8">
+ <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css" rel="stylesheet">
+ <title>첫화면</title>
+ <style>
+
+
+.map-container {
+  position: relative;
+  width: 1080px;
+  height: 720px;
+}
+
+.region {
+  position: absolute;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.region:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+/* 각 지역별 위치 설정 */
+
+.region1 {
+  top: 500px;
+  left: 585px;
+  width: 150px;
+  height: 161px;
+  
+}
+
+.region2 {
+  top: 378px;
+  left: 515px;
+  width: 233px;
+  height: 229px;
+  
+}
+
+.region3 {
+  top: 416px;
+  left: 232px;
+  width: 236px;
+  height: 224px;
+}
+
+.region4 {
+  top: 217px;
+  left: 490px;
+  width: 215px;
+  height: 190px;
+}
+
+.region5 {
+  top: 157px;
+  left: 466px;
+  width: 211px;
+  height: 129px;
+}
+
+.region6 {
+  top: 50px;
+  left: 80px;
+   width: 467px;
+  height: 417px;
+  
+}
+.region7 {
+  top: 294px;
+  left: 277px;
+   width: 155px;
+  height: 195px;
+  
+}
+.region8 {
+  top: 270px;
+  left: 417px;
+   width: 137px;
+  height: 278px;
+  
+}
+.region0 {
+  top: 50px;
+  left: 900px;
+  width: 465px;
+  height: 455px;
+  
+}
+   body {
+   font-family: 'Gmarket Sans', sans-serif;
+   background-color: #912c2c;
+   }
+
+ </style>
 </head>
+</html>
 <body>
-  <div class="container">
-    <a href="bukgu.html" class="map" style="background-image: url('0.png');">
-      <div class="overlay">북구</div>
-    </a>
-    <a href="namgu.html" class="map" style="background-image: url('namgu.jpeg');">
-      <div class="overlay">남구</div>
-    </a>
-  </div>
+   <br>
+   <br>
+   <a style="font-size: 40px; font-weight: 200; margin-left: 90px; color: #ffffff">무엇을 할지 고민하는 한동대 학생을 위해</a><br>
+   <a style="font-size: 90px; font-weight: 900; margin-left: 90px; color: #ffffff">한동 주변에서 놀아보자!</a><br>
+   <a style="font-size: 70px; font-weight: 200; margin-left: 90px; color: #ffffff">북구</a> <a style="font-size: 70px; font-weight: 200; margin-left: 700px; color: #ffffff">남구</a><br>
+   
+
+   <div class="map-container">
+    <a href="bukgu.html" class="map">
+  <img src="1.png" class="region region1" alt="지역1">
+  <img src="2.png" class="region region2" alt="지역2">
+  <img src="3.png" class="region region3" alt="지역3">
+  <img src="4.png" class="region region4" alt="지역4">
+  <img src="5.png" class="region region5" alt="지역5">
+  <img src="6.png" class="region region6" alt="지역6">
+  <img src="7.png" class="region region7" alt="지역7">
+  <img src="8.png" class="region region8" alt="지역8">
+  </a>
+    <a href="namgu.html" class="map">
+  <img src="0.png" class="region region0" alt="지역0">
+</a>
+
+</div>
 </body>
 </html>
 
